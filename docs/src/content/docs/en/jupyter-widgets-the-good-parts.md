@@ -1,7 +1,6 @@
 ---
 title: "Jupyter Widgets: The Good Parts"
 description: "Distilling core Jupyter Widgets concepts for anywidget authors"
-layout: ../../layouts/MainLayout.astro
 ---
 
 _This page is largely adapted from

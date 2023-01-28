@@ -16,12 +16,10 @@ type Props = CollectionEntry<"docs">["data"] & {
 	headings: MarkdownHeading[];
 };
 
-const { headings, ...data } = Astro.props;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const currentPage = Astro.url.pathname.replace(/\/$/, "");
-
-const currentFile = data.file.split(/\/(?=src\/pages\/)/)[1];
-const githubEditUrl = `${CONSTS.GITHUB_EDIT_URL}/${currentFile}`;
+let { headings, ...data } = Astro.props;
+let canonicalURL = new URL(Astro.url.pathname, Astro.site);
+let currentPage = Astro.url.pathname.replace(/\/$/, "");
+let githubEditUrl = `${CONSTS.GITHUB_EDIT_URL}/${data.file}` as const;
 ---
 
 <html dir={data.dir} lang={data.lang} class="initial">
@@ -150,6 +148,6 @@ const githubEditUrl = `${CONSTS.GITHUB_EDIT_URL}/${currentFile}`;
 				<RightSidebar headings={headings} githubEditUrl={githubEditUrl} />
 			</aside>
 		</main>
-		<Footer path={currentFile} />
+		<Footer path={data.file} />
 	</body>
 </html>

@@ -5,17 +5,20 @@ import MainLayout from '../layouts/MainLayout.astro';
 export async function getStaticPaths() {
 	const docs = await getCollection('docs');
 	return docs.map((entry) => ({
-		params: {
-			slug: entry.slug,
-		},
+		params: { slug: entry.slug },
 		props: entry,
 	}));
 }
 
 const post = Astro.props as CollectionEntry<'docs'>;
 const { Content, headings } = await post.render();
+
+let data = {
+	...post.data,
+	file: `docs/src/content/docs/${post.id}` as const,
+}
 ---
 
-<MainLayout headings={headings} {...post.data}>
+<MainLayout headings={headings} {...data}>
 	<Content />
 </MainLayout>

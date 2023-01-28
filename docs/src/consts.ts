@@ -30,8 +30,8 @@ export const KNOWN_LANGUAGES = {
 } as const;
 export const KNOWN_LANGUAGE_CODES = Object.values(KNOWN_LANGUAGES);
 
-export const GITHUB_URL = `https://github.com/manzt/anywidget`;
-export const GITHUB_EDIT_URL = `${GITHUB_URL}/tree/main/docs`;
+export const GITHUB_URL = `https://github.com/manzt/anywidget` as const;
+export const GITHUB_EDIT_URL = `${GITHUB_URL}/tree/main` as const;;
 export const COMMUNITY_INVITE_URL = "";
 
 // See "Algolia" section of the README for more information.

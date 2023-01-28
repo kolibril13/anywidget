@@ -1,7 +1,6 @@
 ---
 title: Bundling
 description: Docs bundling
-layout: ../../layouts/MainLayout.astro
 ---
 
 Often the ESM required to connect a JavaScript library to Python with
