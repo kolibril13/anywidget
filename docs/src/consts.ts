@@ -1,8 +1,8 @@
 export const SITE = {
 	title: "anywidget",
 	description: "custom jupyter widgets made easy",
-	defaultLanguage: "en_US",
-};
+	defaultLanguage: "en-us",
+} as const;
 
 export const OPEN_GRAPH = {
 	image: {

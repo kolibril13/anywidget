@@ -1,9 +1,11 @@
 ---
 import SplashLayout from "../layouts/SplashLayout.astro";
 import Hero from "../components/Hero.astro";
+
+let data = {};
 ---
 
-<SplashLayout>
+<SplashLayout {...data} >
 	<Hero />
 </SplashLayout>
 
